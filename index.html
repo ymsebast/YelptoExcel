@@ -66,11 +66,16 @@
 
         ref.on("value", function (snapshot) {
             var output = snapshot.val();
-            console.log(output);
-            var str = JSON.stringify(output,null,4);
-            console.log(JSON.stringify(output,null,4));
+            var arr = Object.values(output);
+            console.log(arr)
+            // var str = JSON.stringify(output,null,4);
+            // console.log(JSON.stringify(output,null,4));
             var result = document.getElementById("results");
-            result.innerHTML = str;
+            for(var i = 0; i < arr.length; i++)
+            {
+                result.append(arr[i].name +" wants to go to "+ arr[i].favorite );
+            }
+            // result.append = str;
         }, function (error) {
             console.log("Error: " + error.code);
         });
