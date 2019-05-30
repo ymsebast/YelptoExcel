@@ -25,11 +25,31 @@
         <div class="row">
             <button id="submit" class="btn btn-dark" style="margin:20px" onclick="storeInput()">Submit</button>
         </div>
+
+        <!-- Database results -->
+        <div id="results">
+
+        </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
 
     <script>
+        // Set the configuration 
+        var config = {
+            apiKey: "AIzaSyC2LiGQ80QByMhcJE1WoqaD2Y5XX5Pkpjc",
+            authDomain: "restaurants-7b460.firebaseapp.com",
+            databaseURL: "https://restaurants-7b460.firebaseio.com",
+            projectId: "restaurants-7b460",
+            storageBucket: "restaurants-7b460.appspot.com",
+            messagingSenderId: "441375385449",
+
+        };
+        firebase.initializeApp(config);
+
+        // Get a reference to the database service
+        var database = firebase.database();
+
 
         function GetURLParameter(sParam) {
             var sPageURL = window.location.search.substring(1);
@@ -41,6 +61,20 @@
                 }
             }
         }
+        //read firebase
+        var ref = firebase.database().ref();
+
+        ref.on("value", function (snapshot) {
+            var output = snapshot.val();
+            console.log(output);
+            var str = JSON.stringify(output,null,4);
+            console.log(JSON.stringify(output,null,4));
+            var result = document.getElementById("results");
+            result.innerHTML = str;
+        }, function (error) {
+            console.log("Error: " + error.code);
+        });
+
         function storeInput() {
 
             //obtain and display url input
@@ -49,21 +83,6 @@
             console.log(input)
             var favInput = document.getElementById("favPlace");
             favInput.innerHTML = favPlace;
-
-            // Set the configuration 
-            var config = {
-                apiKey: "AIzaSyC2LiGQ80QByMhcJE1WoqaD2Y5XX5Pkpjc",
-                authDomain: "restaurants-7b460.firebaseapp.com",
-                databaseURL: "https://restaurants-7b460.firebaseio.com",
-                projectId: "restaurants-7b460",
-                storageBucket: "restaurants-7b460.appspot.com",
-                messagingSenderId: "441375385449",
-
-            };
-            firebase.initializeApp(config);
-
-            // Get a reference to the database service
-            var database = firebase.database();
 
 
             //store input in firebase
