@@ -75,11 +75,9 @@
                     </table>
                 </div>
             </div>
-            <!-- <div class="col">
-                <div id="randomPlace">
+            <div id="favPlace">
 
-                </div>
-            </div> -->
+            </div>
         </div>
     </div>
 
@@ -88,6 +86,21 @@
         integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
         crossorigin="anonymous"></script>
     <script>
+        function GetURLParameter(sParam) {
+            var sPageURL = window.location.search.substring(1);
+            var sURLVariables = sPageURL.split('&');
+            for (var i = 0; i < sURLVariables.length; i++) {
+                var sParameterName = sURLVariables[i].split('=');
+                if (sParameterName[0] == sParam) {
+                    return sParameterName[1];
+                }
+            }
+        }
+        var favPlace = GetURLParameter('input');
+        console.log(input);
+        var favInput = document.getElementById("favPlace");
+        favInput.innerHTML= favPlace;
+
         var x = document.getElementById("demo");
         var lat;
         var long;
@@ -142,7 +155,7 @@
 
                         cell1.innerHTML = response.businesses[i].id;
                         // cell2.innerHTML = "<img src = '"+ response.businesses[i].image_url + "' style='width:100px;height100px;'>";
-                        cell2.innerHTML = response.businesses[i].name ;
+                        cell2.innerHTML = response.businesses[i].name;
 
                         for (var j = 0; j < response.businesses[i].categories.length; j++) {
                             // last entry, no comma
