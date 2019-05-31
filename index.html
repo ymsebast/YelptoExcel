@@ -17,9 +17,15 @@
     <div class="container">
         <!-- Enter your name -->
         <div class="row">
-            <label for="search">Enter Name</label>
+            <label for="search">Name</label>
 
             <input class="form-control" type="text" id="name" placeholder="Ynah">
+        </div>
+        <!-- Enter your time -->
+        <div class="row">
+            <label for="search">Time</label>
+
+            <input class="form-control" type="text" id="time" placeholder="12pm">
         </div>
 
         <div class="row">
@@ -71,9 +77,8 @@
             // var str = JSON.stringify(output,null,4);
             // console.log(JSON.stringify(output,null,4));
             var result = document.getElementById("results");
-            for(var i = 0; i < arr.length; i++)
-            {
-                result.append(arr[i].name +" wants to go to "+ arr[i].favorite );
+            for (var i = 0; i < arr.length; i++) {
+                result.append(arr[i].name + " wants to go to " + arr[i].favorite);
             }
             // result.append = str;
         }, function (error) {
@@ -85,6 +90,8 @@
             //obtain and display url input
             var input = GetURLParameter('input');
             var name = $("#name").val().trim();
+            var time = $("#time").val().trim();
+
             console.log(input)
             var favInput = document.getElementById("favPlace");
             favInput.innerHTML = favPlace;
@@ -93,7 +100,8 @@
             //store input in firebase
             database.ref().push({
                 favorite: "test",
-                name: name
+                name: name,
+                time: time
             });
         }
     </script>
