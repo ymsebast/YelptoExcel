@@ -27,20 +27,30 @@
     <div class="container">
         <!-- Enter your name -->
         <div class="row">
-            <label for="name">Name :</label>
+            <div class="col">
+                <label for="name">Name :</label>
 
-            <input class="form-control" type="text" id="name" placeholder="Ynah">
+                <input class="form-control" type="text" id="name" placeholder="Ynah">
+            </div>
         </div>
         <!-- Enter your time -->
         <div class="row" style="margin-top: 30px;">
-            <label for="time">Time : </label>
-            <input type="time" id="time" name="appt" min="9:00" max="18:00" required style="margin-left: 30px;">
+            <div class="col-sm-3">
+                <label for="time">Time : </label>
+                <input type="time" id="time" name="appt" min="9:00" max="18:00" required style="margin-left: 30px;">
+                <!-- <input type="time" id="time2" name="appt" min="9:00" max="18:00" required style="margin-left: 30px;"> -->
+            </div>
+            <div class="col">
+                <button id="submit" class="btn btn-secondary" onclick="storeInput()">Submit</button>
+
+            </div>
             <!-- <input class="form-control" type="text" id="time" placeholder="12pm"> -->
         </div>
-
+        <!-- 
         <div class="row">
-            <button id="submit" class="btn btn-dark" style="margin:20px" onclick="storeInput()">Submit</button>
-        </div>
+            <button id="submit" class="btn btn-secondary" style="margin:20px;" onclick="storeInput()">Submit</button>
+        </div> -->
+        <hr class="my-4">
 
         <!-- Database results -->
         <div id="tableWrap">
