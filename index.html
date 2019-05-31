@@ -94,12 +94,12 @@
 
             console.log(input)
             var favInput = document.getElementById("favPlace");
-            favInput.innerHTML = favPlace;
+            favInput.innerHTML = input;
 
 
             //store input in firebase
             database.ref().push({
-                favorite: "test",
+                favorite: input,
                 name: name,
                 time: time
             });
