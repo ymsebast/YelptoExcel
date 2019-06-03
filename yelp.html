@@ -103,14 +103,7 @@
                     <table id="results"
                         style="width: 100%;  border: 1px solid black; border-collapse: collapse; padding: 15px">
                         <tr>
-                            <th> ID </th>
-                            <th> Name </th>
-                            <th> Categories </th>
-                            <th> Rating </th>
-                            <th> Price </th>
-                            <th> Phone # </th>
-                            <th> Address </th>
-                            <th> Distance (m)</th>
+                            
 
                         </tr>
                     </table>
@@ -172,6 +165,7 @@
                     console.log(response);
                     console.log(response.businesses.length);
                     var table = document.getElementById("results");
+                    table.innerHTML = "<th> ID </th> <th> Name </th> <th> Categories </th> <th> Rating </th> <th> Price </th> <th> Phone # </th> <th> Address </th> <th> Distance (m)</th>"
                     for (var i = 0; i < response.businesses.length; i++) {
                         var row = table.insertRow();
                         var cell1 = row.insertCell(0);
