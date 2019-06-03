@@ -41,9 +41,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="./index2.html">Test2</a>
                 </li>
-         
+
             </ul>
-           
+
         </div>
     </nav>
     <div class="container">
@@ -63,27 +63,20 @@
                 <form class="form-inline">
                     <label for="time">From : </label>
 
-                    <input type="time" class="form-control mr-sm-2" id="time" name="appt" 
-                        required style="margin-left: 30px;">
+                    <input type="time" class="form-control mr-sm-2" id="time" name="appt" required
+                        style="margin-left: 30px;">
                     <div style="margin: 10px"> To : </div>
-                    <input type="time" class="form-control mr-sm-2" id="time2" name="appt"
-                        required style="margin-left: 20px;">
+                    <input type="time" class="form-control mr-sm-2" id="time2" name="appt" required
+                        style="margin-left: 20px;">
 
                     <button id="submit" class="btn btn-secondary" onclick="storeInput()"
                         style="margin-left: 20px;">Submit</button>
 
-                    <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
-                    <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
-                </form>
-                <!-- <label for="time">Time : </label>
-                <input type="time" id="time" name="appt" min="9:00" max="18:00" required style="margin-left: 30px;"> -->
-                <!-- <input type="time" id="time2" name="appt" min="9:00" max="18:00" required style="margin-left: 30px;"> -->
-            </div>
-            <!-- <div class="col">
-                <button id="submit" class="btn btn-secondary" onclick="storeInput()">Submit</button>
 
-            </div> -->
-            <!-- <input class="form-control" type="text" id="time" placeholder="12pm"> -->
+                </form>
+        
+            </div>
+
         </div>
         <!-- 
         <div class="row">
@@ -172,7 +165,8 @@
         function storeInput() {
 
             //obtain and display url input
-            var input = GetURLParameter('input');
+            // var input = GetURLParameter('input');
+            var input = "Tacos";
             var name = $("#name").val().trim();
             var time = $("#time").val().trim();
             var time2 = $("#time2").val().trim();
