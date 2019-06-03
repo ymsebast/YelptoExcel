@@ -36,53 +36,18 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="./index.html">Test1</a>
+                    <a class="nav-link" href="./index.html">Test1 </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./index2.html">Test2</a>
                 </li>
-
+                <li class="nav-item">
+                    <a class="nav-link" href="./yelp.html">Yelp Excel</a>
+                </li>
             </ul>
-
         </div>
     </nav>
     <div class="container">
-
-        <!-- Enter your name -->
-        <div class="row">
-            <div class="col">
-                <label for="name">Name :</label>
-
-                <input class="form-control" type="text" id="name" placeholder="Ynah">
-            </div>
-        </div>
-        <!-- Enter your time -->
-        <div class="row" style="margin-top: 30px;">
-
-            <div class="col">
-                <form class="form-inline">
-                    <label for="time">From : </label>
-
-                    <input type="time" class="form-control mr-sm-2" id="time" name="appt" required
-                        style="margin-left: 30px;">
-                    <div style="margin: 10px"> To : </div>
-                    <input type="time" class="form-control mr-sm-2" id="time2" name="appt" required
-                        style="margin-left: 20px;">
-
-                    <button id="submit" class="btn btn-secondary" onclick="storeInput()"
-                        style="margin-left: 20px;">Submit</button>
-
-
-                </form>
-        
-            </div>
-
-        </div>
-        <!-- 
-        <div class="row">
-            <button id="submit" class="btn btn-secondary" style="margin:20px;" onclick="storeInput()">Submit</button>
-        </div> -->
-        <hr class="my-4">
 
         <!-- Database results -->
         <div id="tableWrap">
@@ -101,6 +66,10 @@
     <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
 
     <script>
+        //Prompts
+        var name = prompt("Please enter your name:", "Ynah");
+        var time = prompt("Please enter the time:", "11am-12pm");
+
         // Set the configuration 
         var config = {
             apiKey: "AIzaSyC2LiGQ80QByMhcJE1WoqaD2Y5XX5Pkpjc",
@@ -162,27 +131,22 @@
             console.log("Error: " + error.code);
         });
 
-        function storeInput() {
 
-            //obtain and display url input
-            // var input = GetURLParameter('input');
-            var input = "Tacos";
-            var name = $("#name").val().trim();
-            var time = $("#time").val().trim();
-            var time2 = $("#time2").val().trim();
-            var totTime = time + "-" + time2;
-            console.log(input)
-            var favInput = document.getElementById("favPlace");
-            favInput.innerHTML = input;
+        //obtain and display url input
+        // var input = GetURLParameter('input');
+        var input = "Tacos";
+        console.log(input);
+        console.log(name);
+        console.log(time);
 
 
-            //store input in firebase
-            database.ref().push({
-                favorite: input,
-                name: name,
-                time: totTime
-            });
-        }
+        //store input in firebase
+        database.ref().push({
+            favorite: input,
+            name: name,
+            time: time
+        });
+
     </script>
 </body>
 
