@@ -136,6 +136,7 @@
         //obtain and display url input
         var input = GetURLParameter('input');
         var input2 = input.replace(/%20/g,' ');
+        input2 = input2.replace(/%27/g,"'")
         // var input = "Tacos";
         console.log(input2);
         console.log(name);
