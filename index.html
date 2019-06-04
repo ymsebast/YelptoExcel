@@ -137,14 +137,14 @@
         var input = GetURLParameter('input');
         var input2 = input.replace('%20',' ');
         // var input = "Tacos";
-        console.log(input);
+        console.log(input2);
         console.log(name);
         console.log(time);
 
 
         //store input in firebase
         database.ref().push({
-            favorite: input,
+            favorite: input2,
             name: name,
             time: time
         });
