@@ -16,12 +16,14 @@
             border: 1px solid black;
             width: 100%;
             border-collapse: collapse;
-            padding: 15px
+            padding: 15px;
+            font-family: "Lucida Sans Unicode"
         }
+        
     </style>
 </head>
 
-<body>
+<body style="font-family: Lucida Sans Unicode">
     <!-- <div id="favPlace">
 
     </div> -->
@@ -135,6 +137,7 @@
 
         //obtain and display url input
         var input = GetURLParameter('input');
+        //replace regex
         var input2 = input.replace(/%20/g,' ');
         input2 = input2.replace(/%27/g,"'")
         // var input = "Tacos";
@@ -149,6 +152,8 @@
             name: name,
             time: time
         });
+
+        
 
     </script>
 </body>
